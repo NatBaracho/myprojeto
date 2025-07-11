@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+    <head>
+        <!-- Pré-carregamento das fontes do Google Fonts para melhor performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Importação da fonte Inter do Google Fonts -->
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+        
+        <!-- Configurações meta básicas do documento -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Título da página -->
+        <title>Documento</title>
+        
+        <!-- Link para o arquivo CSS externo -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Container principal que engloba todo o conteúdo -->
+        <div id="container">
+            <!-- Seção do perfil com foto e nome do usuário -->
+            <div id="profile">
+                <img src="./assets/avatar.png" alt="Foto de Natã de oculos de grau, barba e fundo um hacker">
+                <p>@natan_baracho</p>
+            </div>
+
+            <!-- Switch para alternar entre modo claro e escuro -->
+            <div id="switch" onclick="toggleMode()">
+                <button></button>
+                <span></span>
+            </div>
+            
+            <!-- Lista de links/botões principais -->
+            <ul>
+                <li>
+                    <a href="#">Inscrever-se no NLW</a>
+                </li>
+                <li>
+                     <a href="#">Baixar meu e-bbok</a>
+                </li>
+                <li>
+                     <!-- Link para o portfólio no GitHub (abre em nova aba) -->
+                     <a href="https://github.com/NatBaracho"
+                        target="_blank"
+                     >Ver meu portfólio</a>
+                </li>
+                <li>
+                     <!-- Link para o Explore da Rocketseat (abre em nova aba) -->
+                     <a href="https://rocketseat.com.br/explore"
+                        target="_blank"
+                     >Conheça meu Explore</a>
+                </li>
+            </ul>
+            
+            <!-- Seção de links para redes sociais -->
+            <div id="social-links">
+                <!-- Link para GitHub -->
+                <a href="https://github.com/NatBaracho" target="_blank" >
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+                
+                <!-- Link para Instagram -->
+                <a href="https://www.instagram.com/natan_baracho" target="_blank"> 
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                 
+                <!-- Link para YouTube -->
+                <a href="https://www.youtube.com/Natã Baracho" target="_blank">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+               
+                <!-- Link para LinkedIn -->
+                <a href="https://www.linkedin.com/in/nat%C3%A3-baracho-7a997934a/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </div>
+            
+            <!-- Rodapé com créditos -->
+            <footer>
+                Feito com ♥ pela <a hert="https://rocketseat.com.br/">Rocketseat</a>
+            </footer>
+        </div>
+        
+        <!-- Script para carregar os ícones do Ionicons (versão ES modules) -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+        </script>
+        
+        <!-- Script para carregar os ícones do Ionicons (versão fallback para navegadores antigos) -->
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+        </script>
+        
+        <!-- Script JavaScript personalizado -->
+        <script src="./script.js"></script>
+    </body>
+</html>
