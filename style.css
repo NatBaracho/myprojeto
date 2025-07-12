@@ -47,6 +47,7 @@ body{
     /* Shorthand para todas as propriedades de background em uma linha */
     /* background: [image] [repeat] [position] / [size] */
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 /* Aplica fonte e cor do texto para todos os elementos dentro do body */
@@ -193,4 +194,14 @@ footer{
     padding: 24px 0;  /* Espaçamento interno */
     text-align: center;  /* Centraliza o texto */
     font-size: 14px;  /* Tamanho da fonte */
+}
+
+/* midia queries*/
+@media (min-width: 700px){
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
 }
