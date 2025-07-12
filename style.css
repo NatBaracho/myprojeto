@@ -60,6 +60,7 @@ body * {
    =========================================== */
 #container{
     width: 360px;  /* Largura fixa para mobile */
+    max-width: 588px; * Largura maxima para mobile */
     margin: 56px auto 0px;  /* Centraliza horizontalmente com margem superior */
     padding: 0 24px;  /* Espaçamento interno lateral */
 }
