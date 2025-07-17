@@ -1,232 +1,232 @@
 /* ===========================================
-   RESET CSS - Remove estilos padrão do navegador
+   RESET CSS - Normalização de estilos
    =========================================== */
-*{
-    margin: 0;           /* Remove margem padrão de todos os elementos */
-    padding: 0;          /* Remove padding padrão de todos os elementos */
-    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho do elemento */
+* {
+    margin: 0;                    /* Remove margens padrão */
+    padding: 0;                   /* Remove paddings padrão */
+    box-sizing: border-box;       /* Inclui padding e border no cálculo da largura/altura */
 }
 
 /* ===========================================
    VARIÁVEIS CSS - Tema escuro (padrão)
    =========================================== */
-:root{
-    --text-color: white;  /* Cor do texto no tema escuro */
-    --bg-url: url(./assets/bg-mobile.jpg);  /* Imagem de fundo para tema escuro */
-    --stroke-color: rgba(255, 255, 255, 0.5);  /* Cor das bordas (branco semi-transparente) */
-    --surface-color: rgba(255, 255,255, 0.05);  /* Cor de fundo dos elementos (branco muito transparente) */
-    --surface-color-hover: rgba(0, 0, 0, 0.02);  /* Cor de fundo ao passar o mouse */
-    --highlight-color: rgba(255, 255, 255, 0.2);  /* Cor de destaque para hover */
-    --switch-bg-url: url(./assets/moon-stars.svg);  /* Ícone do switch (lua para tema escuro) */
+:root {
+    --text-color: white;                              /* Cor principal do texto */
+    --bg-url: url(./assets/bg-mobile.jpg);            /* Imagem de fundo para mobile */
+    --stroke-color: rgba(255, 255, 255, 0.5);        /* Cor das bordas - branco 50% transparente */
+    --surface-color: rgba(255, 255, 255, 0.05);      /* Cor de fundo dos elementos - branco 5% transparente */
+    --surface-color-hover: rgba(0, 0, 0, 0.02);      /* Cor de fundo no hover - preto 2% transparente */
+    --highlight-color: rgba(255, 255, 255, 0.2);     /* Cor de destaque - branco 20% transparente */
+    --switch-bg-url: url(./assets/moon-stars.svg);   /* Ícone do switch - lua para tema escuro */
 }
 
 /* ===========================================
    VARIÁVEIS CSS - Tema claro
    =========================================== */
-.light{
-    --text-color: black;  /* Cor do texto no tema claro */
-    --bg-url: url(./assets/bg-mobile-light.jpg);  /* Imagem de fundo para tema claro */
-    --stroke-color: rgba(0, 0, 0, 0.5);  /* Cor das bordas (preto semi-transparente) */
-    --surface-color: rgba(0, 0, 0, 0.05);  /* Cor de fundo dos elementos (preto muito transparente) */
-    --surface-color-hover: rgba(0, 0, 0, 0.02);  /* Cor de fundo ao passar o mouse */
-    --highlight-color: rgba(0, 0, 0, 0.1);  /* Cor de destaque para hover */
-    --switch-bg-url: url(./assets/Sun.svg);  /* Ícone do switch (sol para tema claro) */
+.light {
+    --text-color: black;                              /* Cor principal do texto no tema claro */
+    --bg-url: url(./assets/bg-mobile-light.jpg);      /* Imagem de fundo clara para mobile */
+    --stroke-color: rgba(0, 0, 0, 0.5);              /* Cor das bordas - preto 50% transparente */
+    --surface-color: rgba(0, 0, 0, 0.05);            /* Cor de fundo dos elementos - preto 5% transparente */
+    --surface-color-hover: rgba(0, 0, 0, 0.02);      /* Cor de fundo no hover - preto 2% transparente */
+    --highlight-color: rgba(0, 0, 0, 0.1);           /* Cor de destaque - preto 10% transparente */
+    --switch-bg-url: url(./assets/Sun.svg);          /* Ícone do switch - sol para tema claro */
 }
 
 /* ===========================================
-   ESTILO DO CORPO DA PÁGINA
+   CONFIGURAÇÃO GERAL DO BODY
    =========================================== */
-body{
-    /* Método antigo comentado para referência:
-    background-image: url(./assests/bg-mobile.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    */
-
-    /* Shorthand para todas as propriedades de background em uma linha */
-    /* background: [image] [repeat] [position] / [size] */
+body {
+    /* Configuração do background usando shorthand:
+       background: [image] [repeat] [position] / [size] */
     background: var(--bg-url) no-repeat top center/cover;
-    height: 100vh;
+    height: 100vh;                /* Altura total da viewport */
 }
 
-/* Aplica fonte e cor do texto para todos os elementos dentro do body */
+/* Aplicação da fonte e cor para todos os elementos filhos */
 body * {
-    font-family: "Inter", sans-serif;  /* Fonte personalizada do Google Fonts */
-    color: var(--text-color);  /* Usa a variável de cor definida no tema */
+    font-family: "Inter", sans-serif;    /* Fonte do Google Fonts */
+    color: var(--text-color);            /* Cor do texto baseada no tema */
 }
 
 /* ===========================================
-   CONTAINER PRINCIPAL
+   CONTAINER PRINCIPAL - Layout centralizado
    =========================================== */
-#container{
-    width: 360px;  /* Largura fixa para mobile */
-    max-width: 588px; /* Largura maxima para mobile */
-    margin: 56px auto 0px;  /* Centraliza horizontalmente com margem superior */
-    padding: 0 24px;  /* Espaçamento interno lateral */
+#container {
+    width: 360px;                    /* Largura fixa para layout mobile */
+    max-width: 588px;                /* Largura máxima permitida */
+    margin: 56px auto 0px;           /* Centralização horizontal + margem superior */
+    padding: 0 24px;                 /* Espaçamento lateral interno */
 }
 
 /* ===========================================
-   SEÇÃO DO PERFIL
+   SEÇÃO DO PERFIL - Avatar e nome do usuário
    =========================================== */
-#profile{
-    text-align: center;  /* Centraliza o conteúdo do perfil */
-    padding: 24px;  /* Espaçamento interno */
+#profile {
+    text-align: center;              /* Centraliza todo o conteúdo */
+    padding: 24px;                   /* Espaçamento interno em todas as direções */
 }
 
-/* Estilo da imagem do perfil */
+/* Estilização da imagem do perfil */
 #profile img {
-    width: 112px;  /* Largura fixa da imagem */
+    width: 112px;                    /* Largura fixa da imagem de perfil */
 }
 
-/* Estilo do parágrafo com o nome do usuário */
-#profile p{
-    font-weight: 500;  /* Peso da fonte (meio negrito) */
-    line-height: 24px;  /* Altura da linha */
-    margin-top: 8px;  /* Margem superior */
+/* Estilização do nome do usuário */
+#profile p {
+    font-weight: 500;                /* Peso da fonte - semi-negrito */
+    line-height: 24px;               /* Altura da linha para melhor legibilidade */
+    margin-top: 8px;                 /* Espaçamento superior */
 }
 
 /* ===========================================
-   SWITCH (ALTERNADOR DE TEMA)
+   SWITCH DE TEMA - Alternador dark/light
    =========================================== */
-#switch{
-    position: relative;  /* Permite posicionamento absoluto dos filhos */
-    width: 64px;  /* Largura do switch */
-    margin: 4px auto;  /* Centraliza horizontalmente */
+#switch {
+    position: relative;              /* Permite posicionamento absoluto dos filhos */
+    width: 64px;                     /* Largura total do switch */
+    margin: 4px auto;                /* Centralização horizontal */
 }
 
-/* Botão do switch */
-#switch button{
-    width: 32px;  /* Largura do botão */
-    height: 32px;  /* Altura do botão */
+/* Botão móvel do switch */
+#switch button {
+    width: 32px;                     /* Largura do botão */
+    height: 32px;                    /* Altura do botão */
     background: white var(--switch-bg-url) no-repeat center;  /* Cor branca + ícone centralizado */
-    border: 0;  /* Remove borda padrão */
-    border-radius: 50%;  /* Deixa o botão circular */
-
-    /* Posicionamento absoluto para controlar a posição exata */
+    border: 0;                       /* Remove borda padrão */
+    border-radius: 50%;              /* Transforma em círculo perfeito */
+    
+    /* Posicionamento absoluto para controle preciso */
     position: absolute;
-    top: 50%;  /* Centraliza verticalmente */
-    left: 0;  /* Posição inicial (tema escuro) */
-    z-index: 1;  /* Fica acima do span */
-    transform: translateY(-50%);  /* Ajuste fino da centralização vertical */
-    animation: slide-back 0.2s;
+    top: 50%;                        /* Centraliza verticalmente */
+    left: 0;                         /* Posição inicial (tema escuro) */
+    z-index: 1;                      /* Garante que fica acima da trilha */
+    transform: translateY(-50%);     /* Ajuste fino da centralização vertical */
+    animation: slide-back 0.2s;      /* Animação de retorno */
 }
 
-
-/* Posição do botão no tema claro */
-.light #switch button{
-    animation: slide-in 0.2s forwards;
+/* Posição do botão quando tema claro está ativo */
+.light #switch button {
+    animation: slide-in 0.2s forwards;  /* Animação de deslizamento para a direita */
 }
 
-#switch button:hover{
-    outline: 8px solid var(--highlight-color)
- 
+/* Efeito hover no botão do switch */
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);  /* Contorno destacado no hover */
 }
 
-/* Trilha do switch (fundo) */
-#switch span{
-    display: block;  /* Transforma em elemento de bloco */
-    width: 64px;  /* Largura da trilha */
-    height: 24px;  /* Altura da trilha */
-    background: var(--surface-color);  /* Cor de fundo */
-    border: 1px solid var(--stroke-color);  /* Borda */
-    --webkit-backdrop-filter: blur(4px);  /* Efeito de desfoque (prefixo webkit) */
-    border-radius: 9999px;  /* Bordas totalmente arredondadas */
+/* Trilha/fundo do switch */
+#switch span {
+    display: block;                  /* Transforma em elemento de bloco */
+    width: 64px;                     /* Largura da trilha */
+    height: 24px;                    /* Altura da trilha */
+    background: var(--surface-color); /* Cor de fundo baseada no tema */
+    border: 1px solid var(--stroke-color);  /* Borda baseada no tema */
+    -webkit-backdrop-filter: blur(4px);     /* Efeito de desfoque (webkit) */
+    border-radius: 9999px;           /* Bordas totalmente arredondadas */
 }
 
 /* ===========================================
-   LISTA DE LINKS
+   LISTA DE LINKS - Menu principal
    =========================================== */
-ul{
-    list-style: none;  /* Remove marcadores da lista */
-    display: flex;  /* Layout flexível */
-    flex-direction: column;  /* Organiza os itens em coluna */
-    gap: 16px;  /* Espaçamento entre os itens */
-    padding: 24px 0;  /* Espaçamento interno superior e inferior */
+ul {
+    list-style: none;                /* Remove marcadores da lista */
+    display: flex;                   /* Layout flexível */
+    flex-direction: column;          /* Organiza itens em coluna */
+    gap: 16px;                       /* Espaçamento uniforme entre itens */
+    padding: 24px 0;                 /* Espaçamento vertical interno */
 }
 
-/* Estilo dos links dentro da lista */
+/* Estilização dos links do menu */
 ul li a {
-    display: flex;  /* Layout flexível */
-    align-items: center;  /* Centraliza verticalmente */
-    justify-content: center;  /* Centraliza horizontalmente */
-
-    padding: 16px 24px;  /* Espaçamento interno */
-    background: var(--surface-color);  /* Cor de fundo */
-    border: 1px solid var(--stroke-color);  /* Borda */
-    border-radius: 8px;  /* Bordas arredondadas */
-    backdrop-filter: blur(4px);  /* Efeito de desfoque */
-    -webkit-backdrop-filter: blur(4px);  /* Efeito de desfoque (prefixo webkit) */
-    text-decoration: none;  /* Remove sublinhado do link */
-    font-weight: 500;  /* Peso da fonte */
-    transition: background 0.2s;  /* Animação suave na mudança de cor */
+    display: flex;                   /* Layout flexível */
+    align-items: center;             /* Centraliza verticalmente */
+    justify-content: center;         /* Centraliza horizontalmente */
+    
+    padding: 16px 24px;              /* Espaçamento interno */
+    background: var(--surface-color); /* Cor de fundo baseada no tema */
+    border: 1px solid var(--stroke-color);  /* Borda baseada no tema */
+    border-radius: 8px;              /* Bordas levemente arredondadas */
+    backdrop-filter: blur(4px);      /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(4px); /* Efeito de desfoque (webkit) */
+    text-decoration: none;           /* Remove sublinhado padrão */
+    font-weight: 500;                /* Peso da fonte - semi-negrito */
+    transition: background 0.2s;     /* Transição suave para mudanças de cor */
 }
 
-/* Efeito hover nos links (pseudo-seletor) */
-ul li a:hover{
-    background: var(--surface-color-hover);  /* Muda a cor de fundo */
-    border: 1.5px solid var(--text-color);  /* Destaca a borda */
-}
-
-/* ===========================================
-   LINKS DAS REDES SOCIAIS
-   =========================================== */
-#social-links{
-    display: flex;  /* Layout flexível */
-    justify-content: center;  /* Centraliza horizontalmente */
-    padding: 24px;  /* Espaçamento interno */
-    font-size: 24px;  /* Tamanho dos ícones */
-}
-
-/* Estilo individual dos links sociais */
-#social-links a{
-    display: flex;  /* Layout flexível */
-    align-items: center;  /* Centraliza verticalmente */
-    justify-content: center;  /* Centraliza horizontalmente */
-    padding: 16px;  /* Espaçamento interno */
-    transition: background 0.2s;  /* Animação suave */
-    border-radius: 50%;  /* Deixa circular */
-}
-
-/* Efeito hover nos links sociais */
-#social-links a:hover{
-    background: var(--highlight-color);  /* Cor de destaque */
+/* Efeito hover nos links do menu */
+ul li a:hover {
+    background: var(--surface-color-hover);  /* Muda cor de fundo no hover */
+    border: 1.5px solid var(--text-color);   /* Destaca a borda no hover */
 }
 
 /* ===========================================
-   RODAPÉ
+   LINKS DAS REDES SOCIAIS - Ícones sociais
    =========================================== */
-footer{
-    padding: 24px 0;  /* Espaçamento interno */
-    text-align: center;  /* Centraliza o texto */
-    font-size: 14px;  /* Tamanho da fonte */
+#social-links {
+    display: flex;                   /* Layout flexível */
+    justify-content: center;         /* Centraliza horizontalmente */
+    padding: 24px;                   /* Espaçamento interno */
+    font-size: 24px;                 /* Tamanho dos ícones */
 }
 
-/* midia queries*/
-@media (min-width: 700px){
-    :root{
-        --bg-url: url(./assets/bg-desktop.jpg);
+/* Estilização individual dos ícones sociais */
+#social-links a {
+    display: flex;                   /* Layout flexível */
+    align-items: center;             /* Centraliza verticalmente */
+    justify-content: center;         /* Centraliza horizontalmente */
+    padding: 16px;                   /* Espaçamento interno */
+    transition: background 0.2s;     /* Transição suave */
+    border-radius: 50%;              /* Transforma em círculo */
+}
+
+/* Efeito hover nos ícones sociais */
+#social-links a:hover {
+    background: var(--highlight-color);  /* Cor de destaque no hover */
+}
+
+/* ===========================================
+   RODAPÉ - Informações adicionais
+   =========================================== */
+footer {
+    padding: 24px 0;                 /* Espaçamento vertical interno */
+    text-align: center;              /* Centraliza o texto */
+    font-size: 14px;                 /* Tamanho da fonte menor */
+}
+
+/* ===========================================
+   MEDIA QUERIES - Responsividade
+   =========================================== */
+/* Configuração para telas desktop (largura mínima de 700px) */
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);    /* Imagem de fundo para desktop */
     }
-    .light{
-        --bg-url: url(./assets/bg-desktop-light.jpg);
+    
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);  /* Imagem de fundo clara para desktop */
     }
 }
 
-/* animation*/
-@keyframes slide-in{
-    from{
-        left: 0;
+/* ===========================================
+   ANIMAÇÕES - Transições do switch
+   =========================================== */
+/* Animação de deslizamento para a direita (ativar tema claro) */
+@keyframes slide-in {
+    from {
+        left: 0;                     /* Posição inicial */
     }
-    to{
-        left: 50%;
+    to {
+        left: 50%;                   /* Posição final */
     }
 }
 
-@keyframes slide-back{
-    from{
-        left: 50%;
+/* Animação de deslizamento para a esquerda (ativar tema escuro) */
+@keyframes slide-back {
+    from {
+        left: 50%;                   /* Posição inicial */
     }
-    to{
-        left: 0;
+    to {
+        left: 0;                     /* Posição final */
     }
 }
